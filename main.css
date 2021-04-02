@@ -1,0 +1,306 @@
+body {
+  font-family: 'Ultra', serif;
+  text-align: center;
+  color: white;
+  background-color: black;
+}
+
+h1 {
+  margin-top: 2vw;
+  font-size: 3vw;
+}
+
+/* BACKGROUND CLOUDS STARS*/
+
+@keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+  from {background-position:0 0;}
+  to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+  from {background-position:0 0;}
+  to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+  from {background-position: 0;}
+  to {background-position:10000px 0;}
+}
+
+.clouds {
+  position: absolute;
+  top: 0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  height:70%;
+  display:block;
+}
+
+.stars {
+  background:#000 url(http://www.script-tutorials.com/demos/360/images/stars.png) repeat;
+  z-index: 0;
+}
+
+.twinkling{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+  z-index: 1;
+
+  -moz-animation:move-twink-back 200s linear infinite;
+  -ms-animation:move-twink-back 200s linear infinite;
+  -o-animation:move-twink-back 200s linear infinite;
+  -webkit-animation:move-twink-back 200s linear infinite;
+  animation:move-twink-back 200s linear infinite;
+}
+
+.clouds{
+  background:transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) no-repeat top center;
+  z-index: 1;
+
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+}
+
+/* CONTAINER MORPION */
+
+.container {
+  margin-top: 5vw;
+  justify-content: center;
+  color: white;
+  padding: 5vw;
+}
+
+.box {
+  border: solid rgb(255, 255, 255) 4px;
+  height: 17vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 11vw;
+}
+
+.btnReplay{
+  height: 3vw;
+  width: 7vw;
+}
+
+.count1 {
+  float: right;
+  border: solid white;
+  width: 5vw;
+  margin-right: 4vw;
+}
+
+.count2 {
+  float: left;
+  border: solid white;
+  width: 5vw;
+  margin-left: 4vw;
+}
+
+/**** TIMER *****/
+
+.timer-group {
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+  width: 400px;
+}
+  
+.timer {
+  border-radius: 50%;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+  width: 100px;
+}
+  
+.timer:after {
+  background: #111 url(https://codepen.io/images/classy_fabric.png);
+  border-radius: 50%;
+  content: "";
+  display: block;
+  height: 80px;
+  left: 10px;
+  position: absolute;
+  width: 80px;
+  top: 10px;
+}
+  
+  .timer .hand {
+  float: left;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  width: 50%;
+}
+  
+.timer .hand span {
+  border: 50px solid rgba(0, 255, 255, .4);
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+  display: block;
+  height: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: rotate(225deg);
+  width: 0;
+}
+  
+.timer .hand:first-child {
+  transform: rotate(180deg);
+}
+  
+.timer .hand span {
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+  
+.timer .hand:first-child span {
+  animation-name: spin1;
+}
+  
+.timer .hand:last-child span {
+  animation-name: spin2; 
+}
+  
+.timer.hour {
+  background: rgba(0, 0, 0, .3);
+  height: 400px;
+  left: 0;
+  width: 400px;
+  top: 0;
+}
+  
+.timer.hour .hand span {
+  animation-duration: 3600s;
+  border-top-color: rgba(255, 102, 0, 0.836);
+  border-right-color: rgba(248, 74, 44, 0.4);
+  border-width: 200px;
+}
+  
+.timer.hour:after {
+  height: 360px;
+  left: 20px;
+  width: 360px;
+  top: 20px;}
+  
+.timer.minute {
+  background: rgba(0, 0, 0, .2);
+  height: 350px;
+  left: 25px;
+  width: 350px;
+  top: 25px;
+}
+  
+.timer.minute .hand span {
+  animation-duration: 60s;
+  border-top-color: rgba(229, 243, 39, 0.4);
+  border-right-color: rgba(255, 238, 0, 0.4);
+  border-width: 175px;
+}
+  
+.timer.minute:after {
+  height: 310px;
+  left: 20px;
+  width: 310px;
+  top: 20px;
+}
+  
+.timer.second {
+  background: rgba(0, 0, 0, .2);
+  height: 300px;
+  left: 50px;
+  width: 300px;
+  top: 50px;
+}
+  
+.timer.second .hand span {
+  animation-duration: 1s;
+  border-top-color: rgba(255, 255, 255, .15);
+  border-right-color: rgba(255, 255, 255, .15);
+  border-width: 150px;
+}
+  
+.timer.second:after {
+  height: 296px;
+  left: 2px;
+  width: 296px;
+  top: 2px;
+}
+  
+.face {
+  background: rgba(0, 0, 0, .1);
+  border-radius: 50%;
+  height: 296px;
+  left: 52px;
+  padding: 165px 40px 0;
+  position: absolute;
+  width: 296px;
+  text-align: center;
+  top: 52px;
+}
+  
+.face h2 {
+  font-weight: 300; 
+}
+  
+.face p {
+  border-radius: 20px;
+  font-size: 40px;
+  position: absolute;
+  top: 107px;
+  width: 260px;
+  left: 20px;
+}
+  
+@keyframes spin1 {
+  0% {
+    transform: rotate(225deg);
+  }
+  50% {
+    transform: rotate(225deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
+  
+@keyframes spin2 {
+  0% {
+    transform: rotate(225deg);
+  }
+  50% {
+    transform: rotate(405deg);
+  }
+  100% {
+    transform: rotate(405deg);
+  }
+}
